@@ -1,0 +1,20 @@
+# DIA 1 #
+Realizando un programa con la terminal
+
+Para moverte con la terminal entre las carpetas de archivos utilizamos los siguientes comandos:
+- pwd--> ruta actual (para ver donde estoy)
+- ls --> lista de lo que hay en la carpeta en la que estoy
+- cd--> entrar y salir.----- al añadir (..) echamos un paso atrás
+- nano--> abrir un programa de edicion de texto
+- cat--> te enseña lo que hay dentro del documento
+- echo --> al poner echo y lo que sea despues simplemente te lo repite.
+- chmod 777--> pones eso, luego el nombre del Programa y ya le da los permisos al archivo
+- ./(nombre del programa)--> te pone lo que has puesto después de "echo"
+- Para volver al principio del todo ponemos /..
+
+
+1 bit = 2^3 bytes  (8)
+2 bits = 2^4 bytes (16)
+3 bits= 2^5 bytes  (32)
+4 bits = 2^6 bytes (64)
+etc...
