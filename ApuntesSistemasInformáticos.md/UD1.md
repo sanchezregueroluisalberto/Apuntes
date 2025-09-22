@@ -11,8 +11,13 @@ Para moverte con la terminal entre las carpetas de archivos utilizamos los sigui
 - **chmod 777**--> pones eso, luego el nombre del Programa y ya le da los permisos al archivo
 - **./(nombre del programa)**--> te pone lo que has puesto después de "echo"
 - Para volver al principio del todo ponemos /..
+- **Touch**--> Para crear un documento
+- **ld -R**--> Te enseña todo el contenido de todas las carpetas
+- **cp-r**--> Copiar todo el contenido de la carpeta
+- **cp-r ruta de la carpeta / carpeta destino** --> copiar una carpeta y llevarla a otra
 
-
+**- cp --help**--> todos los comandos 
+- **top**--> Procesos que tiene abiertos el ordenador
 1 bit = 2^3 bytes  (8)
 2 bits = 2^4 bytes (16)
 3 bits= 2^5 bytes  (32)
