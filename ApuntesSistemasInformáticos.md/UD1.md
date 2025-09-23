@@ -15,6 +15,8 @@ Para moverte con la terminal entre las carpetas de archivos utilizamos los sigui
 - **ld -R**--> Te enseña todo el contenido de todas las carpetas
 - **cp-r**--> Copiar todo el contenido de la carpeta
 - **cp-r ruta de la carpeta / carpeta destino** --> copiar una carpeta y llevarla a otra
+- **mkdir**--> para crear una carpeta
+- **rmdir**--> borrar una carpeta
 
 **- cp --help**--> todos los comandos 
 - **top**--> Procesos que tiene abiertos el ordenador
