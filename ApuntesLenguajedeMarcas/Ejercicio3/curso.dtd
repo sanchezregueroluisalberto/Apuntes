@@ -1,0 +1,6 @@
+
+
+<!ELEMENT curso (nombre, profesor, horas)>
+<!ELEMENT nombre (#PCDATA)>
+<!ELEMENT profesor (#PCDATA)>
+<!ELEMENT horas (#PCDATA)>
