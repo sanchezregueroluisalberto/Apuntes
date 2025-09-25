@@ -20,9 +20,10 @@ Para moverte con la terminal entre las carpetas de archivos utilizamos los sigui
 - **wc**--> te dice cuantas lineas, palabras y caracteres tiene un archivo
 - **cp --help**--> todos los comandos 
 - **top**--> Procesos que tiene abiertos el ordenador
+- **grep**--> te busca todos los archivos que tu pidas (ej: grep .txt), te buscan todos los archivos que acaben por .txt
 
 
-- A veces se separa con **|**
+- A veces se separa con **|** y conecta un comando con otro
 1 bit = 2^3 bytes  (8)
 2 bits = 2^4 bytes (16)
 3 bits= 2^5 bytes  (32)
