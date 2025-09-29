@@ -1,7 +1,15 @@
 <script>
     const numeroDosCifras = Number (prompt("Introduzca un numero dos cifras"))
-    let cifra1 = (numeroDosCifras / 10)
-    let cifra2 = (numeroDosCifras % 10)
+    let cifra1 = parseInt(numeroDosCifras / 10)
+    let cifra2 = (numeroDosCifras - (cifra1 * 10))
 
-    console.log(cifra1 + cifra2)
+   let suma = Number (cifra1 + cifra2)
+   if (numeroDosCifras > 99) {
+    console.log("El numero debe ser de dos cifras")
+   }
+   else (numeroDosCifras <= 99) ;
+
+    console.log("La suma de las cifras es " + suma)
+   ;
+   
 </script>
