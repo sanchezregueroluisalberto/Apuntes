@@ -5,16 +5,16 @@
     let alturaAlCuadrado = altura * altura
     let calcularIMC = Number(peso/alturaAlCuadrado)
     if (calcularIMC <18.5){
-        mensaje= "Su IMC es de: " + calcularIMC + ", eso significa que usted tiene un peso bajo"
+        mensaje= "Su IMC es de: " + calcularIMC.toFixed(2) + ", eso significa que usted tiene un peso bajo"
     }
     else if (calcularIMC>=18.5 ){
-        mensaje="Su IMC es de: " + calcularIMC + ", eso significa que usted tiene un peso normal"
+        mensaje="Su IMC es de: " + calcularIMC.toFixed(2) + ", eso significa que usted tiene un peso normal"
     }
     else if (calcularIMC >= 25 ){
-        mensaje= "Su IMC es de: " + calcularIMC + ", eso significa que usted tiene sobrepeso"
+        mensaje= "Su IMC es de: " + calcularIMC.toFixed(2) + ", eso significa que usted tiene sobrepeso"
     }
     else if (calcularIMC>=30){
-        mensaje = "Su IMC es de: " + calcularIMC + ", eso significa que usted tiene obesidad, recomendamos la visita a un especialista"
+        mensaje = "Su IMC es de: " + calcularIMC.toFixed(2) + ", eso significa que usted tiene obesidad, recomendamos la visita a un especialista"
     }
     else {
         mensaje= "Valores inválidos"
