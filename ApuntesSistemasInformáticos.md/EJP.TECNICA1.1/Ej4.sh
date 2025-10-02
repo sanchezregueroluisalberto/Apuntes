@@ -1,0 +1,3 @@
+#!/bin/bash
+cd proyecto/docs;
+cat Capítulo1:Introduccion Capítulo2:Instalación Capítulo3:Uso Básico
