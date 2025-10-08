@@ -1,3 +1,16 @@
 <script>
-    
+  let tamanio = Number(prompt("Introduzca el tamaño de su piramide"));
+  let fila = "";
+  let espacio = "";
+  let simbolo = "";
+
+  for (let i = 0; i < tamanio; i++) {
+    espacio += " ";
+    simbolo = "";
+    for (let j = 0; j < tamanio - (i + 1); j++) {
+      simbolo += "*";
+    }
+    fila = simbolo + espacio;
+    console.log(fila);
+  }
 </script>
