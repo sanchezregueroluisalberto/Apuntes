@@ -2,16 +2,14 @@
   let saldoRetirar = Number(
     prompt("Saldo: 1000 | Introduzca saldo a retirar: ")
   );
-  let saldo = 1000;
-  while (saldoRetirar > 0) {
     if (saldoRetirar <= 1000 && saldoRetirar > 0) {
       console.log("Saldo: 1000 | Introduzca saldo a retirar: " + saldoRetirar);
     } else if (saldoRetirar == 1000) {
-      console.log(
-        "Saldo: 1000 | Introduzca saldo a retirar: " +
-          saldoRetirar +
-          " .Te has quedado sin saldo ¡A Trabajar!"
-      );
+      console.log("Saldo: 1000 | Introduzca saldo a retirar: " +
+          saldoRetirar + " .Te has quedado sin saldo ¡A Trabajar!" );
     }
-  }
+    else{
+        console.log("Saldo Insuficiente")
+    }
+
 </script>
