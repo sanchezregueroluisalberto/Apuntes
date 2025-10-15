@@ -1,15 +1,17 @@
 <script>
-  let saldoRetirar = Number(
-    prompt("Saldo: 1000 | Introduzca saldo a retirar: ")
-  );
-    if (saldoRetirar <= 1000 && saldoRetirar > 0) {
-      console.log("Saldo: 1000 | Introduzca saldo a retirar: " + saldoRetirar);
-    } else if (saldoRetirar == 1000) {
-      console.log("Saldo: 1000 | Introduzca saldo a retirar: " +
-          saldoRetirar + " .Te has quedado sin saldo ¡A Trabajar!" );
-    }
-    else{
-        console.log("Saldo Insuficiente")
-    }
+  let saldoRetirar = Number(prompt("Saldo: 1000 | Introduzca saldo a retirar: ") );
+  let saldo = 1000;
+  while (saldo >= 0) {
+    if (saldo > saldoRetirar) {
+      saldo = saldo - saldoRetirar;
+      saldoRetirar = prompt("Saldo:" + saldo + "| Introduzca saldo a retirar: ");
+    } else if (saldoRetirar == saldo) {
+      saldo = saldo - saldoRetirar;
+      console.log("Te has quedado sin saldo ¡A Trabajar!");
+    } else {
+      console.log("Saldo Insuficiente");
+      saldoRetirar = prompt( "Saldo:" + saldo + "| Introduzca saldo a retirar: ");
 
+    }
+  }
 </script>
