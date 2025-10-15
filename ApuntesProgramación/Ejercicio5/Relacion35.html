@@ -3,6 +3,17 @@
     contador = 2
     mensaje= ""
     while(numero % contador !=0){
-        if()
+        contador++
+        if(numero == contador){
+            mensaje="El numero es primo"
+        }
+        else if (numero != contador){
+            mensaje="El numero no es primo"
+        }
+        else{
+contador++
+mensaje="El numero siguiente primo es: " + contador
+        }
+        console.log(mensaje)
     }
 </script>
