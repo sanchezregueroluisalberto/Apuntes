@@ -1,3 +1,15 @@
 <script>
     
+    let numeroAComprobar = Number(prompt("Introduce un numero para ver si es primo"))
+    let contador = 2
+    let mensajeSolucion = ""
+    while (numeroAComprobar % contador != 0){
+        contador++
+    }
+    if (numeroAComprobar == contador){
+        mensajeSolucion = "El numero es primo"
+    }else{
+        mensajeSolucion = "El numero no es primo"
+    }
+
 </script>
