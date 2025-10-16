@@ -1,7 +1,7 @@
 <script>
   let saldoRetirar = Number(prompt("Saldo: 1000 | Introduzca saldo a retirar: ") );
   let saldo = 1000;
-  while (saldo >= 0) {
+  while (saldo > 0) {
     if (saldo > saldoRetirar) {
       saldo = saldo - saldoRetirar;
       saldoRetirar = prompt("Saldo:" + saldo + "| Introduzca saldo a retirar: ");
