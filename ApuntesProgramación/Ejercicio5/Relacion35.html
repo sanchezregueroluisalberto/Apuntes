@@ -1,18 +1,16 @@
 <script>
-  let numero = Number(prompt("Introduzca un numero entero"));
-  let contador = 2;
-  let numeroPrimoEncontrado = false;
-  while (!numeroPrimoEncontrado) {
-    contador++;
-    while (numero % contador != 0) {
-      contador++;
-      if (numero == contador) {
-        numeroPrimoEncontrado = true;
-      } else {
-        numero++;
-      }
-    }
+    let numero = Number(prompt("Introduzca un numero entero"));
+    let contador = 2;
+    let numeroPrimoEncontrado = true;
+  if(numero <=1){
+  numeroPrimoEncontrado = false
   }
-  console.log("El siguiente numero primo es" + numero);
+  else{
+  while(contador<numero){
+    if (numero % 1 ==0){
+      numeroPrimoEncontrado = false
+    }
+    contador++
+  }
+  }
 </script>
-
