@@ -1,11 +1,8 @@
 <script>
-    let palabra = prompt("Introduzca una palabra");
-    let mensaje = "";
-    let palabraSalir = "SALIR";
-    while(palabra !=palabraSalir){
-
-      let palabra = prompt("Introduzca una palabra")
-      
+  let palabra = prompt("Introduzca una palabra (Para finalizar introduzca SALIR)");
+  while (palabra != "SALIR") {
+    alert = ("Has introducido" + palabra);
+    palabra = prompt("Introduzca otra palabra (Para finalizar introduzca SALIR)");
   }
-
+  alert = "Programa finalizado, ha introducido SALIR";
 </script>
