@@ -1,0 +1,30 @@
+<script>
+  let combustibleInicial;
+  let kmviaje;
+  let numeroViaje = 1;
+  let precioViaje;
+  let consumoCada100Km;
+  let precio1LCombustible;
+  let combustibleConsumido;
+
+  combustibleInicial = Number(prompt("Introduce el combustible inicial: "));
+  precio1LCombustible = Number(prompt("Precio del litro de combustible: "));
+  consumoCada100Km = Number(prompt("Consumo cada 100km: "));
+  while (combustibleInicial > 0) {
+    kmviaje = Number(
+      prompt("Introduce los kilometros del viaje " + numeroViaje + " : "));
+
+    combustibleConsumido = (kmviaje * consumoCada100Km) / 100;
+
+    if (combustibleInicial > combustibleConsumido) {
+      precioViaje = combustibleConsumido * precio1LCombustible;
+      combustibleInicial -= combustibleConsumido;
+
+      alert("Precio del viaje: " + precioViaje + "€");
+      alert("Combustible restante " + combustibleConsumido + "L");
+      numeroViaje++;
+    } else {
+      alert("Combustible Insuficiente");
+    }
+  }
+</script>

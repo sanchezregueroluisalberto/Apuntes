@@ -1,0 +1,17 @@
+<script>
+    let temperatura
+    let sumatorio = 0 
+    let temperaturamedia
+
+    for(let i=1; i<=7;i++){
+        temperatura = Number (prompt("Introduce la temperatura del dia " + i + ":"))
+
+    if (temperatura > -19 && temperatura < 49){
+        sumatorio += temperatura
+    } 
+        console.log("Introduce la temperatura del dia " + i + ": " + temperatura)
+    }
+    temperaturamedia = sumatorio / temperatura
+
+    console.log("La temperatura media de la semana es: " + temperaturamedia)
+</script>
