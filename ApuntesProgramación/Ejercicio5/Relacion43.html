@@ -1,0 +1,23 @@
+<script>
+      let numero = Number(prompt("Introduzca un numero entero"))
+      if(numero <=2){
+          alert("No hay numeros primos menores que " + numero)
+      }
+      else{
+          let mensaje = "Numeros primos menores que " + numero + ": \n ";
+  for(let i=2;i< numero; i++){
+    let numeroPrimo = true
+
+    for(let j=2; j<i; j++){
+        if(n%i === 0){
+            numeroPrimo = false
+        }
+    }
+    if(numeroPrimo){
+        mensaje += n + " \n";
+    }
+}
+    alert(mensaje);
+}
+</script>
+falla

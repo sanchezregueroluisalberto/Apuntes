@@ -1,0 +1,14 @@
+<script>
+    let numero = parseInt(prompt("Introduzca un numero entero"))
+    let suma = 0
+    if (numero< 0){
+        numero = numero * -1
+    }
+
+    while(numero > 0){
+     let digito = numero % 10
+     suma = suma + digito
+     numero = Math.floor(numero/10)
+    }
+    alert("La suma de los digitos es " + suma)
+</script>

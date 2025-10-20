@@ -1,0 +1,24 @@
+<script>
+  let totalCuenta = 0;
+  let precioProducto;
+  let propina;
+  let personas;
+  let precioPorCabeza;
+  let cuentaConPropina;
+  let numeroProducto = 1;
+  let totalConPropina;
+  while (precioProducto != 0) {
+    precioProducto = Number(
+      prompt("Precio del producto " + numeroProducto + ":")
+    );
+    totalCuenta += precioProducto; // se suma recursivamente
+    numeroProducto++;
+  }
+  propina = Number(prompt("¿Cuánta propina quieres dejar?: "));
+  personas = Number(prompt("¿Cúantas personas sois?:"));
+  totalConPropina = totalCuenta + totalCuenta * (propina / 100);
+  precioPorCabeza = totalConPropina / personas;
+  console.log("Total sin propina: " + totalCuenta + "€");
+  console.log("Total con propina del " + propina + "%: " + totalConPropina + "€");
+  console.log("Precio por cabeza: " + precioPorCabeza + "€");
+</script>
