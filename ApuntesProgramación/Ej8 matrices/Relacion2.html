@@ -7,14 +7,12 @@
     temperatura = Number(prompt("Introduce la temperatura del dia " + i));
     temperaturas.push(temperatura);
   }
-  console.log(
-    "Opciones a elegir : " +
+
+  opciones = Number(prompt("Elija una de las opciones " +
       "\n 1- Mostrar la temperatura más alta registrada" +
       "\n 2- Mostrar la temperatura más baja registrada" +
       "\n 3- Calcular la temperatura promedio de la semana" +
-      "\n 4- Salir del programa"
-  );
-  opciones = Number(prompt("Elija una de las opciones "));
+      "\n 4- Salir del programa"));
 
   while (opciones != 4) {
     if (opciones == 1) {
