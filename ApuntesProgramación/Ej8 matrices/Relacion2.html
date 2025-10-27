@@ -1,0 +1,29 @@
+<script>
+  let temperatura;
+  let temperaturas = [];
+  let opciones;
+  let temperaturaMaxima = 0;
+  for (let i = 1; i <= 7; i++) {
+    temperatura = Number(prompt("Introduce la temperatura del dia " + i));
+    temperaturas.push(temperatura);
+  }
+  console.log(
+    "Opciones a elegir : " +
+      "\n 1- Mostrar la temperatura más alta registrada" +
+      "\n 2- Mostrar la temperatura más baja registrada" +
+      "\n 3- Calcular la temperatura promedio de la semana" +
+      "\n 4- Salir del programa"
+  );
+  opciones = Number(prompt("Elija una de las opciones "));
+
+  while (opciones != 4) {
+    if (opciones == 1) {
+      for (let j = 0; j < temperaturas.length; j++) {
+        if (temperatura[j] > temperaturaMaxima) {
+          temperatura[j] = temperaturaMaxima;
+        }
+      }
+    }
+    console.log(temperaturaMaxima);
+  }
+</script>
