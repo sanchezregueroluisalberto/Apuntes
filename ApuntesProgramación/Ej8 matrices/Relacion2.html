@@ -5,6 +5,7 @@
   let temperaturaMaxima = 0;
   for (let i = 1; i <= 7; i++) {
     temperatura = Number(prompt("Introduce la temperatura del dia " + i));
+    console.log("Temperatura del dia " + i + " :" + temperatura)
     temperaturas.push(temperatura);
   }
 
@@ -22,6 +23,7 @@
         }
       }
     }
-    console.log(temperaturaMaxima);
+    alert("La temperatura maxima es: " + temperaturaMaxima);
+
   }
 </script>
