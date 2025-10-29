@@ -1,0 +1,69 @@
+<script>
+  let temperatura;
+  let temperaturas = [];
+  let opcion;
+  let temperaturaMaxima = 0;
+  let temperaturaMinima = 0;
+  const NUMERODIASSEMANA = 7
+  let sumatorioTemperturas = 0
+  let promedio = 0
+  for (let i = 1; i <= NUMERODIASSEMANA; i++) {
+    temperatura = Number(prompt("Introduce la temperatura del dia " + i));
+    console.log("Temperatura del dia " + i + " :" + temperatura)
+    temperaturas.push(temperatura);
+  }
+
+  opcion = Number(prompt("Elija una de las opciones " +
+      "\n 1- Mostrar la temperatura más alta registrada" +
+      "\n 2- Mostrar la temperatura más baja registrada" +
+      "\n 3- Calcular la temperatura promedio de la semana" +
+      "\n 4- Salir del programa"));
+
+  while (opcion != 4) {
+    if (opcion == 1) {
+      temperaturaMaxima = temperaturas[0];
+      for (let j = 0; j < temperaturas.length; j++) {
+        if (temperaturas[j] > temperaturaMaxima) {
+          temperaturaMaxima = temperaturas[j];
+        }
+      }
+      alert("La temperatura maxima es: " + temperaturaMaxima);
+    }
+  opcion = Number(prompt("Elija una de las opciones " +
+      "\n 1- Mostrar la temperatura más alta registrada" +
+      "\n 2- Mostrar la temperatura más baja registrada" +
+      "\n 3- Calcular la temperatura promedio de la semana" +
+      "\n 4- Salir del programa"));
+      if(opcion == 2){
+        temperaturaMinima = temperaturas[0];
+        for(let i = 0; i < temperaturas.length; i++){
+          if(temperaturas[i] < temperaturaMinima){
+            temperaturaMinima = temperaturas[i];
+          }
+        }
+      alert("La temperatura minima es: " + temperaturaMinima);
+      }
+  opcion = Number(prompt("Elija una de las opciones " +
+      "\n 1- Mostrar la temperatura más alta registrada" +
+      "\n 2- Mostrar la temperatura más baja registrada" +
+      "\n 3- Calcular la temperatura promedio de la semana" +
+      "\n 4- Salir del programa"));
+      if(opcion == 3){
+        for(let i = 0; i < temperaturas.length; i++){
+          sumatorioTemperturas += temperaturas[i]
+          promedio = sumatorioTemperturas / NUMERODIASSEMANA
+      
+        }
+
+        alert("El promedio de temperaturas es: " + promedio)
+      }
+  opcion = Number(prompt("Elija una de las opciones " +
+      "\n 1- Mostrar la temperatura más alta registrada" +
+      "\n 2- Mostrar la temperatura más baja registrada" +
+      "\n 3- Calcular la temperatura promedio de la semana" +
+      "\n 4- Salir del programa"));
+
+  }
+  console.log("Programa Finalizado")
+
+</script>

@@ -1,0 +1,56 @@
+<script>
+  const jugadores = [
+    "Jugador1",
+    "Jugador2",
+    "Jugador3",
+    "Jugador4",
+    "Jugador5",
+  ];
+  const puntuaciones = [120, 200, 150, 180, 220];
+  opcion = Number(
+    prompt(
+      "Elije una de las opciones: " +
+        "\n 1- Añadir un nuevo jugador y su puntuacion" +
+        "\n 2-Mostrar los jugadores y sus jugadores iniciales" +
+        "\n 3- Salir del programa"
+    )
+  );
+  let nuevoUsuario;
+  let nuevaPuntuacion;
+  while (opcion != 3) {
+    opcion = Number(
+      prompt(
+        "Elije una de las opciones: " +
+          "\n 1- Añadir un nuevo jugador y su puntuacion" +
+          "\n 2-Mostrar los jugadores y sus jugadores iniciales" +
+          "\n 3- Salir del programa"
+      )
+    );
+    if (opcion == 1 || opcion == 2 || opcion == 3) {
+      if (opcion == 1) {
+        nuevoUsuario = prompt("Introduzca un nuevo usuario");
+        nuevaPuntuacion = prompt("Introduce nueva puntuacion");
+        jugadores.shift();
+        jugadores.push(nuevoUsuario);
+        puntuaciones.shift();
+        puntuaciones.push(nuevaPuntuacion);
+      }
+
+      if (opcion == 2) {
+        alert(jugadores);
+        alert(puntuaciones);
+      }
+    }
+    else{
+    opcion = Number(
+      prompt(
+        "Elije una de las opciones: " +
+          "\n 1- Añadir un nuevo jugador y su puntuacion" +
+          "\n 2-Mostrar los jugadores y sus jugadores iniciales" +
+          "\n 3- Salir del programa"
+      )
+    );
+    }
+  }
+  console.log("Programa Finalizado");
+</script>
