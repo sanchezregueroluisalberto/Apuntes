@@ -1,0 +1,25 @@
+<script>
+  let productos = [
+    "producto1",
+    "producto2",
+    "producto3",
+    "producto4",
+    "producto5",
+    "producto6",
+    "producto7",
+    "producto8",
+    "producto9",
+    "producto10",
+  ];
+  let precios = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+  let compra = prompt("Introduzca el producto que quieres comprar");
+  let cantidadProductos = Number(
+    prompt("Introduzca el numero de veces que quieres comprar ese producto: ")
+  );
+  for (let i = 0; i < productos.length; i++) {
+    if (compra == productos[i]) {
+      compra == productos[i] * cantidadProductos;
+    }
+    alert("El usuario ha comprado el producto")
+  }
+</script>
