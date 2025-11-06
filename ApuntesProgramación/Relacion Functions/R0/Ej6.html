@@ -1,0 +1,15 @@
+<script>
+    function esPositivo (numero){
+        let esPositivo
+        if(numero >= 0){
+            esPositivo = true
+        }else{
+            esPositivo = false
+        }
+        return "El numero introducido es " + esPositivo + " (true si es positivo y false si es negativo)"
+    }
+    //-----------Main------------
+    let numeroUsuario = Number (prompt("Introduzca un numero para ver si es positivo o negativo"))
+    console.log(esPositivo(numeroUsuario));
+    
+</script>

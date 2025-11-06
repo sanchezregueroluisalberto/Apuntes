@@ -1,0 +1,15 @@
+<script>
+    function esPar(numero){
+        let esPar
+        if(numero % 2 == 0){
+            esPar = true
+        }else{
+            esPar = false
+        }
+        return esPar;
+    }
+    //----------Main-------------
+    let numeroUsuario = Number(prompt("Introduzca un numero para saber si es par o no"))
+    console.log(esPar(numeroUsuario));
+    
+</script>

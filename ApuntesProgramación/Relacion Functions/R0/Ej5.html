@@ -1,0 +1,15 @@
+<script>
+  function factorial(numero) {
+    let resultado = 1;
+    for (i = 1; i <= numero; i++) {
+      resultado *= i;
+    }
+
+    return resultado;
+  }
+  //-----------Main--------------
+  let numeroUsuario = Number(
+    prompt("Introduzca un numero para ver su factorial")
+  );
+  console.log(factorial(numeroUsuario));
+</script>
