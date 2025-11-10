@@ -1,10 +1,10 @@
 <script>
-function celsiusAFahrenheit(temperatura){
-    let operacion = (temperatura * 9/5) + 32
-    return celsiusAFahrenheit
+function celsiusAFahrenheit(celsius) {
+   return (celsius * 9 / 5) + 32
 }
-//----------------------Main-------------------
-let temperaturaUsuario = Number(prompt("Introduzca una temperatura para pasarla de Celsius a Fahrenheit"))
-console.log(celsiusAFahrenheit(temperaturaUsuario));
 
+// ================== MAIN ================== //
+
+let fahrenheit = celsiusAFahrenheit(25)
+console.log(fahrenheit)
 </script>
