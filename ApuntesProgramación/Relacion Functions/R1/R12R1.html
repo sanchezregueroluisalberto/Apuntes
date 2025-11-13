@@ -1,0 +1,36 @@
+<script>
+    function caraOCruz() {
+        let aleatorio = Math.floor(Math.random() * 2)
+        let respuesta = ""
+        //if (!aleatorio) {
+        if (aleatorio == 0) {
+            respuesta = "Cara"
+        } else {
+            respuesta = "Cruz"
+        }
+        return respuesta
+    }
+
+    function simularLanzamientoHastaTresCaras(){
+        let totalTiradas = 0
+        let consecutivas = 0
+        let listaResultados = []
+        while(consecutivas < 3){
+            let resultado = caraOCruz()
+            listaResultados.push(resultado)
+            totalTiradas++
+            if(resultado == "Cruz"){
+                consecutivas = 0
+            }else{
+                consecutivas++
+            }
+
+        }
+        return [totalTiradas, listaResultados]
+        
+    }
+
+  //------------------Main-------------
+    let resultados = simularLanzamientoHastaTresCaras()
+  alert("El total de tiradas es de " + resultados[0] + "\n Resultado del juego: " + resultados[1])
+</script>
