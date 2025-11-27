@@ -1,0 +1,21 @@
+<script>
+function estudioCaracteristicasTexto(textoAnalizar){
+    // split es una funcion que hace que se separen las palabras con espacios (o lo que tu pidas)
+    let numPalabra = textoAnalizar.split(" ").length
+    let numCaracteres = textoAnalizar.length - (numPalabra - 1)
+    let promedioPalabras = numCaracteres/numPalabra
+    return [numPalabra, numCaracteres, promedioPalabras]
+}
+
+const texto = "Hola mundo mundo programacion es increible increible increible";
+let analisis = estudioCaracteristicasTexto(texto)
+
+console.log(`Num palabras: ${analisis[0]}`)
+console.log(`Num caracteres: ${analisis[1]}`)
+console.log(`Promedio por palabra: ${analisis[2]}`)
+
+
+
+//otra manera
+alert(estudioCaracteristicasTexto(texto));
+</script>
