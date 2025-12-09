@@ -1,0 +1,22 @@
+<script>
+    function generarColaClientes(numeroClientes){
+        const nombres = ["Ana", "Luis", "María", "Jorge", "Lucía", "Pablo", "Sara", "Diego"]
+        const apellidos = ["García", "Hernández", "Martínez", "López", "Sánchez", "Ruiz", "Gómez", "Navarro"];
+        let cola = []
+        for(let i = 0; i < numeroClientes; i++){
+            let nombreAleatorio = nombres[Math.floor(Math.random() * nombres.length)]
+            let apellidoAleatorio = apellidos[Math.floor(Math.random() * apellidos.length)]
+            let tiempoEspera = Math.floor(Math.random() * 20) + 1
+
+            let cliente = nombreAleatorio + " " + apellidoAleatorio + ", " + tiempoEspera + " minutos"
+
+            cola.push(cliente)
+        }
+
+        return cola
+    } 
+
+    //----------------------
+    let colaClientes = generarColaClientes(3)
+    console.log(colaClientes)
+</script>

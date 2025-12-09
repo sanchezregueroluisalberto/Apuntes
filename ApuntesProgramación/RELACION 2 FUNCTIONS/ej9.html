@@ -1,0 +1,36 @@
+<script>
+function simularClimaSemana(estacion){
+    let arrayInvierno = []
+    let arrayVerano = []
+    let resultado
+if(estacion == "invierno"){
+let temperaturaMaximaInvierno = Math.floor(Math.random() * (15 - (-5) + 1)) + (-5)
+let temperaturaMinimaInvierno = Math.floor(Math.random() * (5 - (-15) + 1)) + (-15)
+let probabilidadLluviaInvierno = Math.floor(Math.random() * (100 - 50 + 1)) + 50
+
+arrayInvierno.push(temperaturaMaximaInvierno, temperaturaMinimaInvierno, probabilidadLluviaInvierno)
+resultado = arrayInvierno
+    }
+if(estacion == "verano"){
+    let temperaturaMaximaVerano = Math.floor(Math.random() * (40 - 25 + 1)) + 25;
+    let temperaturaMinimaVerano = Math.floor(Math.random() * (25 - 15 + 1)) + 15;
+    let probabilidadLluviaVerano = Math.floor(Math.random() * (50 - 0 + 1)) + 0;
+    arrayVerano.push(temperaturaMaximaVerano, temperaturaMinimaVerano, probabilidadLluviaVerano)
+    resultado = arrayVerano
+}
+
+return resultado
+}
+
+
+
+
+
+
+//--------------------------------
+const simulacionSemanaInvierno = simularClimaSemana("invierno")
+console.log(simulacionSemanaInvierno)
+
+const simulacionSemanaVerano = simularClimaSemana("verano");
+console.log(simulacionSemanaVerano);
+</script>

@@ -1,0 +1,15 @@
+<script>
+    function calcularParesMenores(cotaSuperior){
+        let paresMenores = []
+        for(let i = 1; i < cotaSuperior; i++){
+            if(i % 2 == 0){
+                paresMenores.push(i)
+            }
+        }
+        return paresMenores
+    }
+
+    //-------------------
+    let cotaSuperiorUsuario = Number(prompt("Introduzca un numero del que quieras saber sus pares menores"))
+    alert(calcularParesMenores(cotaSuperiorUsuario))
+</script>

@@ -1,0 +1,18 @@
+<script>
+function simularVotaciones(candidatos){
+    let candidatosYVotaciones = []
+    for(let i = 0; i < candidatos.length; i++){
+        let numeroAleatorio = Math.floor(Math.random() * 100/3)
+        candidatosYVotaciones.push(candidatos[i] + ", " + numeroAleatorio)
+    }
+return candidatosYVotaciones
+}
+const candidatos = ["Juan", "Sofía", "Carlos"];
+console.log(simularVotaciones(candidatos))
+
+
+
+
+// sin hacer la suma de votos 100
+</script> 
+

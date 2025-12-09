@@ -1,0 +1,29 @@
+<script>
+function generarUsuario(nombre, apellido){
+    let nombreUsuario = nombre.toLowerCase()
+    let apellidoUsuario = apellido.toLowerCase()
+    let tresLetrasNombre = ""
+    let tresLetrasApellido = ""
+    let numerosAleatorios = ""
+    for(let i = 0; i < 3;i++){
+        tresLetrasNombre += nombreUsuario[i]
+        tresLetrasApellido += apellidoUsuario[i]
+        }
+        for(let i = 1; i <= 3; i++){
+            let numero = Math.floor(Math.random() * 10) 
+            numerosAleatorios += numero
+        }
+        let usuarioFinal = tresLetrasNombre + tresLetrasApellido + numerosAleatorios
+        return usuarioFinal
+    }
+    
+
+
+
+
+
+
+//------------
+let miNombreUsuario = generarUsuario("Pedro", "Torres")
+console.log(miNombreUsuario)
+</script>

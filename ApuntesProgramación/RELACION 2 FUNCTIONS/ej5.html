@@ -1,0 +1,18 @@
+<script>
+function detectarPalabrasClave(texto, palabrasClave){
+    const PALABRASTEXTO = texto.toLowerCase().split(" ")
+    let numeroPalabrasClave = 0
+    for(let i = 0; i < palabrasClave.length; i++){
+            if(PALABRASTEXTO.includes(palabrasClave[i].toLowerCase())){
+                numeroPalabrasClave++
+        }
+    }
+    return numeroPalabrasClave
+}
+
+//-------------------------
+
+const TEXTO = "Me gusta programar en Python y Java";
+const PALABRASCLAVE = ["python", "java", "c++"];
+console.log(detectarPalabrasClave(TEXTO, PALABRASCLAVE))
+</script>
