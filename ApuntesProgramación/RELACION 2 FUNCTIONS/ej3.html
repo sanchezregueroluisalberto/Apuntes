@@ -1,0 +1,26 @@
+<script>
+function mayoresDeEdad(personas){
+    let nombresMayorEdad = []
+    const MAYORDEEDAD = 18
+    for(let i = 0; i < personas.length; i++){
+        let nombre = personas[i][0]
+        let edad = personas [i][1]
+        if(edad >= MAYORDEEDAD){
+            nombresMayorEdad.push(nombre)
+        }
+    }
+    return nombresMayorEdad
+}
+
+//------------------------------------
+const personas = [
+  ["Ana", 17],
+  ["Luis", 20],
+  ["Marta", 18],
+  ["Carlos", 15],
+  ["Elena", 25],
+];
+
+const listaNombreMayoresDeEdad = mayoresDeEdad(personas);
+console.log(listaNombreMayoresDeEdad)
+</script>

@@ -1,0 +1,14 @@
+<script>
+    function citasSolapadas(horaInicioCita1, horaFinCita1, horaInicioCita2, horaFinCita2) {
+        let citasCorrectas =  horaInicioCita1 < horaFinCita1 && horaInicioCita2 < horaFinCita2
+        let cita1NoSolapaCita2 = horaFinCita1 <= horaInicioCita2
+        let cita2NoSolapaCita1 = horaFinCita2 <= horaInicioCita1
+        let citasNoSolapadas = (cita1NoSolapaCita2 || cita2NoSolapaCita1) && citasCorrectas 
+        return !citasNoSolapadas
+    }
+// ============================= MAIN ============================= //
+
+    let seSolapan = citasSolapadas("17:00", "15:30", "11:00", "13:30");
+    // let seSolapan = citasSolapadas("14:00", "15:30", "15:00", "16:00");
+    console.log(seSolapan)
+</script>
