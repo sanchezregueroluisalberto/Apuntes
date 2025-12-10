@@ -1,0 +1,37 @@
+<script>
+function emparejarAmigos(amigos) {
+    
+    let bolsa = []  // copia para no modificar la original
+        for (let i = 0; i < amigos.length; i++) {
+        bolsa.push(amigos[i]);
+    }
+    let emparejamientos = [];
+
+    while (bolsa.length > 0) {
+        // Sacamos el primero
+        let amigo1 = bolsa.splice(0, 1)[0];
+
+        // Buscamos un amigo que NO sea él mismo
+        let indiceAleatorio = Math.floor(Math.random() * bolsa.length);
+
+        // Si justo el aleatorio es él mismo (muy raro pero posible si no hay más)
+        // volvemos a generar hasta que no coincida.
+        while (bolsa[indiceAleatorio] === amigo1) {
+            indiceAleatorio = Math.floor(Math.random() * bolsa.length);
+        }
+
+        // Sacamos a la pareja del array
+        let amigo2 = bolsa.splice(indiceAleatorio, 1)[0];
+
+        // Guardamos la pareja
+        emparejamientos.push([amigo1, amigo2]);
+    }
+
+    return emparejamientos;
+}
+
+
+//----------------------
+const amigos = ["Ana", "Luis", "Marta", "Pedro", "Elena", "Carlos"];
+console.log(emparejarAmigos(amigos))
+</script>
