@@ -3,7 +3,7 @@ import java.util.Scanner;
 public class ejercicio7_R3 {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        System.out.println("Introduzca un numero: ");
+        System.out.print("Introduzca un numero: ");
         int numero1 = scanner.nextInt();
 
         scanner.nextLine();
@@ -14,21 +14,20 @@ public class ejercicio7_R3 {
         scanner.nextLine();
 
         System.out.print("Introduzca la operacion que quieras hacer: ");
-        char operacion = scanner.next().charAt(0);
+        String operacion = scanner.nextLine();
 
-        scanner.close();
-        double resultado;
+        double resultado = 0.0;
 
-        if (operacion == '+') {
+        if (operacion.equals("+")) {
             resultado = numero1 + numero2;
             System.out.println("Resultado: " + resultado);
-        } else if (operacion == '-') {
+        } else if (operacion.equals("-")) {
             resultado = numero1 - numero2;
             System.out.println("Resultado: " + resultado);
-        } else if (operacion == '*') {
+        } else if (operacion.equals("*")) {
             resultado = numero1 * numero2;
             System.out.println("Resultado: " + resultado);
-        } else if (operacion == '/') {
+        } else if (operacion.equals("/")) {
             resultado = numero1 / numero2;
             System.out.println("Resultado: " + resultado);
         } else {
@@ -36,5 +35,6 @@ public class ejercicio7_R3 {
             System.out.println("Operación no válida");
         }
 
+        scanner.close();
     }
 }
