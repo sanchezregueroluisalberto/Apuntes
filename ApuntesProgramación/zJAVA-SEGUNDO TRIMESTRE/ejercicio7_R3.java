@@ -16,6 +16,7 @@ public class ejercicio7_R3 {
         System.out.print("Introduzca la operacion que quieras hacer: ");
         char operacion = scanner.next().charAt(0);
 
+        scanner.close();
         double resultado;
 
         if (operacion == '+') {
@@ -35,6 +36,5 @@ public class ejercicio7_R3 {
             System.out.println("Operación no válida");
         }
 
-        scanner.close();
     }
 }

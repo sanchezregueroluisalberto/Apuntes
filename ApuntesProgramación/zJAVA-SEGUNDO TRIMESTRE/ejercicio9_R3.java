@@ -10,8 +10,8 @@ public class ejercicio9_R3 {
         int cifra2 = (numeroDosCifras - (cifra1 * 10));
         int sumaCifras = cifra1 + cifra2;
         scanner.nextLine();
+        scanner.close();
 
         System.out.print("La suma de la dos cifras es; " + sumaCifras);
-        scanner.close();
     }
 }

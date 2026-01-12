@@ -12,9 +12,9 @@ public class ejercicio9_R2 {
 
         scanner.nextLine();
 
+        scanner.close();
         int restoDeCaramelos = caramelos / niños;
 
         System.out.println("Hay " + caramelos + " caramelos para " + niños + " niños, y han sobrado " + restoDeCaramelos + " caramelos");
-        scanner.close();
     }
 }
