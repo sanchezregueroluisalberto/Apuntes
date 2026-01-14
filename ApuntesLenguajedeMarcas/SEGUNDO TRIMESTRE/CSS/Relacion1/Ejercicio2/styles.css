@@ -1,0 +1,11 @@
+p {
+    color: blueviolet;
+}
+
+.destacado {
+    background-color: brown;
+}
+
+#accion {
+    font-family: 'Courier New', Courier, monospace;
+}
