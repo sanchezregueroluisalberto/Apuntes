@@ -2,11 +2,11 @@ h2 {
     color: coral;
 }
 
-section {
+* {
     background-image: url("imagenes-html.jpg");
     background-size: cover;
 }
 
-:hover {
+p:hover {
     opacity: 0.8;
 }
