@@ -21,7 +21,7 @@ public static String capitalizarPrimeraLetra(String palabra) {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         // pedimos una palabra
-        System.out.println("Introduzca una palabra");
+        System.out.print("Introduzca una palabra: ");
 
         String palabra = scanner.nextLine();
         // enunciamos la función
