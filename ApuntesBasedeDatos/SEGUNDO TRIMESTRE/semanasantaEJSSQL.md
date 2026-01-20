@@ -144,6 +144,7 @@ select max(numero_costaleros) from hermandad
 
 si queremos ver la hermandad con mas costaleros: (select nombre from hermandad where numero_costaleros = (select max(numero_costaleros) from hermandad))
 ## 24. Obtener el número de procesiones que se realizan en el barrio 'Albaicín'.
+SELECT COUNT(*) as numero_procesiones FROM procesion WHERE barrio = "Albaicín";
 
 
 ## 25. Sumar el peso de todos los pasos.
