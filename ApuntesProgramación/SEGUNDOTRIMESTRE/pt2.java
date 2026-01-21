@@ -5,9 +5,10 @@ import java.util.ArrayList;
 
 public class pt2 {
     public static void main(String[] args) {
-        final String EMOJINODESCUBIERTO = "\uD83D\uDFE2";
-        final String EMOJITUBERIASEGURA = "\u26AA";
-        final String EMOJITOPOBOMBA = "\uD83D\uDCA3";
+        final String EMOJINODESCUBIERTO = "\u25A1"; // □ tubería cerrada
+        final String EMOJITUBERIASEGURA = "\u25CB"; // ○ tubería segura
+        final String EMOJITOPOBOMBA = "\u2716"; // ✖ topo-bomba
+
         final Integer TUBERIAVACIA = 0;
         final Integer TUBERIATOPOBOMBA = 1;
         final Integer TOTALARRAY = 10;
