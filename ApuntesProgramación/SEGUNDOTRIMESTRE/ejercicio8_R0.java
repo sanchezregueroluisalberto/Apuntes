@@ -1,3 +1,5 @@
+package ApuntesProgramación.SEGUNDOTRIMESTRE;
+
 import java.util.Scanner;
 
 public class ejercicio8_R0 {
