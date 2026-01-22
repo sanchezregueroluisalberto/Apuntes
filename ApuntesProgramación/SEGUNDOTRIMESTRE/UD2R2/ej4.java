@@ -11,29 +11,46 @@ public class ej4 {
                 Arrays.asList("El quijote", "La Biblia", "Manual de resistencia", "La criada"));
         final ArrayList<Integer> cantidades = new ArrayList<Integer>(Arrays.asList(5, 3, 1, 7));
 
-        String opcion = "";
+        Integer opcion = 0;
         String libroNuevo = "";
         Integer cantidadNuevoLibro = 0;
         String libroActualizado = "";
         Integer cantidadLibroActualizado = 0;
         boolean encontrado = false;
-        do {
-            System.out.println(
-                    " Elije una opcion: \n 1. Añadir un nuevo libro \n 2. Actualizar cantidad \n 3. Ver inventario \n 4. Salir");
-            opcion = scanner.nextLine();
+        while (!opcion.equals("4")) {
+            do {
+                try {
+                    System.out.println(
+                            " Elije una opcion: \n 1. Añadir un nuevo libro \n 2. Actualizar cantidad \n 3. Ver inventario \n 4. Salir");
+                    opcion = scanner.nextInt();
+                    scanner.nextLine();
+                } catch (Exception e) {
+                    // TODO: handle exception
+                    System.out.println("Algo ha fallado");
+                    opcion = -1;
+                    scanner.nextLine();
+                }
 
-            if (opcion.equals("1")) {
+            } while (opcion < 0 && opcion < 4);
+
+            if (opcion == 1) {
+
                 System.out.println("Introduzca el nombre del nuevo libro: ");
                 libroNuevo = scanner.nextLine();
-                System.out.println("¿Cuantos libros quieres añadir?: ");
-                cantidadNuevoLibro = scanner.nextInt();
-
                 libros.add(libroNuevo);
-                cantidades.add(cantidadNuevoLibro);
 
-                scanner.nextLine();
-            }
-            else if (opcion.equals("2")) {
+                do {
+                    try {
+                        System.out.print("¿Cuantos libros quieres añadir?: ");
+                        cantidadNuevoLibro = Integer.parseInt(scanner.nextLine());
+                        cantidades.add(cantidadNuevoLibro);
+
+                    } catch (Exception e) {
+                        System.out.println("Algo ha fallado");
+                        cantidadNuevoLibro = -1;
+                    }
+                } while (cantidadNuevoLibro < 0);
+            } else if (opcion == 2) {
                 System.out.println("Nombre del libro a actualizar: ");
                 libroActualizado = scanner.nextLine();
                 System.out.println("Cantidad nueva a añadir: ");
@@ -50,13 +67,15 @@ public class ej4 {
                 if (!encontrado) {
                     System.out.println("Libro no encontrado");
                 }
-            } else if (opcion.equals("3")) {
+            } else if (opcion == 3) {
                 System.out.println("Inventario: ");
                 for (int i = 0; i < libros.size(); i++) {
                     System.out.println(libros.get(i) + " - " + cantidades.get(i));
                 }
             }
-        } while (!opcion.equals("4"));
+        }
+        ;
+
         scanner.close();
     }
 
