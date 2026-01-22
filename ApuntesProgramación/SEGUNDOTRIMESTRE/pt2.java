@@ -4,6 +4,25 @@ import java.util.Scanner;
 import java.util.ArrayList;
 
 public class pt2 {
+
+    public static ArrayList<Integer> generarTablero(int tamanioTablero, int minimoBombas, int maximoBombas){
+        ArrayList<Integer> tablero = new ArrayList<>();
+        int cantidadDeBombasAleatorias = (int) ((Math.random() * maximoBombas) + minimoBombas);
+        int bombasColocadas = 0;
+
+        for (int i = 0; i < tamanioTablero; i++) {
+            tablero.add(0);
+        }
+
+        while (bombasColocadas < cantidadDeBombasAleatorias) {
+            int indice = (int) (Math.random() * tamanioTablero);
+            if (tablero.get(indice) == 0) {
+                tablero.set(indice, 1);
+                bombasColocadas++;
+            }
+        }
+        return tablero;
+    }
     public static void main(String[] args) {
         final String EMOJINODESCUBIERTO = "\u25A1"; // □ tubería cerrada
         final String EMOJITUBERIASEGURA = "\u25CB"; // ○ tubería segura
@@ -12,9 +31,10 @@ public class pt2 {
         final Integer TUBERIAVACIA = 0;
         final Integer TUBERIATOPOBOMBA = 1;
         final Integer TOTALARRAY = 10;
+        final Integer MINIMBOMBAS = 1;
+        final Integer MAXIMBOMBAS = 5;
 
         Integer bombasPuestas = 0;
-        Integer BOMBASALEATORIAS = (int) ((Math.random() * 5) + 1);
         Integer posicion = 0;
         Integer tuberiasSeguras = 0;
         Integer eleccion = 0;
@@ -23,27 +43,24 @@ public class pt2 {
         boolean juegoActivo = true;
         boolean turnoMario = true;
 
-        ArrayList<Integer> tableroInterno = new ArrayList<>();
+        ArrayList<Integer> tableroInterno = generarTablero(TOTALARRAY, MINIMBOMBAS, MAXIMBOMBAS);
         ArrayList<String> tableroExterna = new ArrayList<>();
-        Scanner scanner = new Scanner(System.in);
-
         for (int i = 0; i < TOTALARRAY; i++) {
-            tableroInterno.add(TUBERIAVACIA);
             tableroExterna.add(EMOJINODESCUBIERTO);
         }
-
-        while (bombasPuestas < BOMBASALEATORIAS) {
-            posicion = (int) (Math.random() * TOTALARRAY);
-
-            if (tableroInterno.get(posicion).equals(TUBERIAVACIA)) {
-                tableroInterno.set(posicion, TUBERIATOPOBOMBA);
-                bombasPuestas++;
+        for (int i = 0; i < TOTALARRAY; i++) {
+            if (tableroInterno.get(i) == TUBERIAVACIA) {
+                tuberiasSeguras++;
             }
         }
-        tuberiasSeguras = TOTALARRAY - bombasPuestas;
-
+        
+        Scanner Scanner = new Scanner(System.in);
         while (juegoActivo) {
-            System.out.println("Tablero: " + tableroExterna);
+            System.out.println("Tablero: " );
+            for (int i = 0; i < TOTALARRAY; i++) {
+                System.out.println(tableroExterna.get(i));
+            }
+            System.out.println();
 
             if (turnoMario) {
                 nombreJugador = "Mario";
@@ -52,7 +69,7 @@ public class pt2 {
             }
             System.out.println(nombreJugador + "Elije una tuberia (0-9): ");
             try {
-                eleccion = scanner.nextInt();
+                eleccion = Scanner.nextInt();
 
                 // Validación de índice y estado
                 if (eleccion >= 0 && eleccion < TOTALARRAY && tableroExterna.get(eleccion).equals(EMOJINODESCUBIERTO)) {
@@ -87,9 +104,9 @@ public class pt2 {
             } catch (Exception e) {
                 // Captura el error si el usuario escribe letras
                 System.out.println("Error, Debes introducir un número entero");
-                scanner.next(); // IMPORTANTE: Limpia la entrada incorrecta del scanner
+                Scanner.next(); // IMPORTANTE: Limpia la entrada incorrecta del scanner
             }
         }
-        scanner.close();
+        Scanner.close();
     }
 }
