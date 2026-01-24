@@ -24,9 +24,9 @@ public class pt2 {
         return tablero;
     }
     public static void main(String[] args) {
-        final String EMOJINODESCUBIERTO = "\u25A1"; // □ tubería cerrada
-        final String EMOJITUBERIASEGURA = "\u25CB"; // ○ tubería segura
-        final String EMOJITOPOBOMBA = "\u2716"; // ✖ topo-bomba
+        final String EMOJINODESCUBIERTO = "\uD83D\uDFE9"; // □ tubería cerrada
+        final String EMOJITUBERIASEGURA = "\u26AA"; // ○ tubería segura
+        final String EMOJITOPOBOMBA = "\uD83D\uDCA3"; // ✖ topo-bomba
 
         final Integer TUBERIAVACIA = 0;
         final Integer TUBERIATOPOBOMBA = 1;
@@ -110,3 +110,6 @@ public class pt2 {
         Scanner.close();
     }
 }
+
+
+//no se hacerla joder ni con chat gpt ni nada y los emojis no van vete y te pelas
