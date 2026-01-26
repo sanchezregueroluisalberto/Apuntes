@@ -148,19 +148,20 @@ SELECT COUNT(*) as numero_procesiones FROM procesion WHERE barrio = "Albaicín";
 
 
 ## 25. Sumar el peso de todos los pasos.
-
+select sum(peso) as peso_pasos from paso;
 
 ## 26. Agrupar las procesiones por barrio y contar cuántas procesiones hay en cada uno.
-
+select barrio, count(*) as total_procesiones from procesion group by barrio
 
 ## 27. Calcular el peso total de los pasos agrupados por estilo.
-
+select estilo, sum(peso) from paso as peso_total group by estilo
 
 ## 28. Mostrar las hermandades agrupadas por número de costaleros, filtrando aquellas con más de 100 costaleros.
+select nombre, numero_costaleros from hermandad where numero_costaleros > 100 order by nombre;
 
 
 ## 29. Obtener el número de procesiones que tienen puntos de paso después de las 20:00.
-
+select count(nombre) from procesion where id in (select (id_procesion) as numero_procesiones from itinerario where punto > "20:00:00" order by punto)
 
 ## 30. Agrupar las hermandades por antigüedad y contar cuántas hay en cada rango.
 
