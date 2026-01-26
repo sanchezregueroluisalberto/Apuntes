@@ -112,4 +112,4 @@ public class pt2 {
 }
 
 
-//no se hacerla joder ni con chat gpt ni nada y los emojis no van vete y te pelas
+//no se hacerla joder ni con chat gpt ni nada y los emojis no van vete a toma por culo
