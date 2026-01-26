@@ -1,0 +1,82 @@
+/* 1. CONFIGURACIÓN GLOBAL */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: rgb(140, 193, 226);
+  font-family: Georgia, "Times New Roman", Times, serif;
+}
+
+/* 2. ESTRUCTURA DEL ENCABEZADO */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center; /* Alinea verticalmente el título y el menú */
+  padding: 10px;
+  background-color: rgb(114, 114, 228);
+}
+
+.titulo {
+  color: white;
+}
+
+/* 3. NAVEGACIÓN (LISTA) */
+.nav-list {
+  display: flex;
+  flex-direction: row;
+  gap: 15px;
+  list-style: none;
+}
+
+/* 4. ENLACES Y ESTADOS (HOVER/ACTIVE) */
+.nav-link {
+  text-decoration: none;
+  color: white; /* Color inicial */
+  font-size: small;
+}
+
+/* Cambia el color al pasar el ratón */
+.nav-link:hover {
+  color: #e67e22;
+}
+
+/* Resalta el enlace seleccionado */
+.nav-link.active {
+  color: #77b3db;
+}
+/*Seccion 1*/
+.seccion-1 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 25vh;
+  background-image: url("https://picsum.photos/100/300");
+  background-size: cover;
+  background-position: center;
+}
+.titulo-2 {
+  display: flex;
+  justify-content: center;
+  font-size: medium;
+}
+.p-1 {
+  display: flex;
+  justify-content: center;
+  margin: 5px;
+}
+.button-1 {
+  display: flex;
+  justify-content: center;
+  margin: 10px;
+  background-color: rgb(77, 77, 214);
+  color: white;
+  font-family:
+    "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+    font-size: small;
+}
+
