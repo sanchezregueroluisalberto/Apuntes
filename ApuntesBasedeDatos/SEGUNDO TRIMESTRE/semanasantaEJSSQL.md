@@ -164,42 +164,49 @@ select nombre, numero_costaleros from hermandad where numero_costaleros > 100 or
 select count(nombre) from procesion where id in (select (id_procesion) as numero_procesiones from itinerario where punto > "20:00:00" order by punto)
 
 ## 30. Agrupar las hermandades por antigüedad y contar cuántas hay en cada rango.
-
+select nombre from hermandad where antiguedad between 1500 and 1800  (o el rango que tu quieras)
 
 ## 31. Concatenar el nombre y barrio de cada procesión en un único campo, separados por un guion.
+select concat(nombre, " - ", barrio) as hermandad_barrio from procesion
 
 ## 32. Mostrar las procesiones cuyos nombres contienen más de 10 caracteres.
+select nombre from procesion where char_length(nombre) > 10
 
 ## 33. Seleccionar los nombres de las procesiones que contienen la palabra 'Soledad'.
+select nombre from procesion where nombre like "%Soledad%"
 
 ## 34. Mostrar las hermandades ordenadas por el número de costaleros en orden ascendente.
-
+select nombre, numero_costaleros from hermandad order by numero_costaleros asc
 
 ## 35. Listar los nombres de los pasos en los que la palabra 'Virgen' no aparece.
-
+select nombre from paso where nombre like "%Virgen%"
 
 ## 36. Calcular la diferencia entre el peso máximo y mínimo de los pasos.
-
+select max(peso) - min(peso) from paso
 
 ## 37. Mostrar solo las procesiones cuyo nombre no empieza con 'La'.
-
+select nombre from procesion where nombre not like "%La%"
 
 ## 38. Formatear la hora de inicio de las procesiones en formato de 12 horas con AM/PM.
+select nombre, date_format(hora_inicio, '%r') as hora_12 from procesion
 
 
 ## 39. Mostrar solo la hora (sin minutos ni segundos) del paso por cada punto del itinerario.
 
+select nombre, date_format(hora_inicio, '%H') as hora_12 from procesion
+
 
 ## 40. Seleccionar las procesiones que tienen su inicio en las próximas 6 horas a partir de la fecha y hora actual.
-
+select nombre, hora_inicio from procesion where hour(hora_inicio) >= hour(now()) and hour(hora_inicio) <= hour(now()) + 5.99
 
 
 
 ## EXTRAS
 ## 41. Redondear el peso de los pasos a la centena más cercana.
-
+SELECT nombre, peso, ROUND(peso, -2) AS peso_redondeado FROM paso;
 
 ## 42. Mostrar el peso de los pasos dividido entre 1000, con dos decimales.
-
+SELECT nombre, ROUND(peso / 1000, 2) AS peso_toneladas FROM paso;
 
 ## 43. Generar un número aleatorio entre 1 y 100.
+SELECT FLOOR(1 + (RAND() * 100));
