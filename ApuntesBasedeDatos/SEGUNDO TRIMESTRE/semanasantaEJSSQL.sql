@@ -67,146 +67,146 @@ INSERT INTO itinerario (id_procesion, punto, hora_paso) VALUES
 (4, 'Paseo de los Tristes', '20:00:00'),
 (4, 'Abadía del Sacromonte', '21:30:00');
 
-## Soluciones a los ejercicios
+-- Soluciones a los ejercicios
 
-## 1. Listar todos los nombres de las procesiones.
+-- 1. Listar todos los nombres de las procesiones.
 select nombre from procesion
 
-## 2. Mostrar los barrios donde se realizan las procesiones, sin repetir.
+-- 2. Mostrar los barrios donde se realizan las procesiones, sin repetir.
 select nombre, barrio from procesion
 
-## 3. Obtener el nombre y la hora de inicio de todas las procesiones que comienzan después de las 18:00.
+-- 3. Obtener el nombre y la hora de inicio de todas las procesiones que comienzan después de las 18:00.
 
 select nombre, hora_inicio from procesion where hora_inicio > "18:00:00"
 
-## 4. Seleccionar el nombre y estilo de todos los pasos.
+-- 4. Seleccionar el nombre y estilo de todos los pasos.
 select nombre, estilo from paso
 
-## 5. Mostrar el nombre de las hermandades que tienen más de 100 costaleros.
+-- 5. Mostrar el nombre de las hermandades que tienen más de 100 costaleros.
 
 select nombre from hermandad where numero_costaleros > 100
 
-## 6. Listar las procesiones que ocurren el Viernes Santo.
+-- 6. Listar las procesiones que ocurren el Viernes Santo.
 
 select nombre from procesion where dia_semana = "Viernes Santo"
 
-## 7. Mostrar los puntos de paso de las procesiones que pasan por 'Catedral'.
+-- 7. Mostrar los puntos de paso de las procesiones que pasan por 'Catedral'.
 
 select punto from itinerario where id_procesion in (select id_procesion from itinerario where punto = "Catedral");
 
-## 8. Obtener las procesiones que tienen lugar en el barrio 'Centro'.
+-- 8. Obtener las procesiones que tienen lugar en el barrio 'Centro'.
 select nombre, barrio from procesion where barrio = "Centro";
-## 9. Listar los estilos de pasos únicos.
+-- 9. Listar los estilos de pasos únicos.
 select distinct estilo from paso;
-## 10. Mostrar los nombres de los pasos que pesan más de 1900 kg.
+-- 10. Mostrar los nombres de los pasos que pesan más de 1900 kg.
 select nombre, peso from paso where peso > 1900;
 
-## 11. Listar los pasos cuyo peso esté entre 1800 y 2200 kg.
+-- 11. Listar los pasos cuyo peso esté entre 1800 y 2200 kg.
 select nombre, peso from paso where peso > 1800 and peso < 2200;
 
-## 12. Mostrar las hermandades fundadas antes del año 1600.
+-- 12. Mostrar las hermandades fundadas antes del año 1600.
 select nombre, antiguedad from hermandad where antiguedad < 1600;
 
-## 13. Seleccionar las procesiones que comienzan después de las 19:00 y están en el barrio 'Realejo'.
+-- 13. Seleccionar las procesiones que comienzan después de las 19:00 y están en el barrio 'Realejo'.
 
 select nombre from procesion where barrio = "Realejo" and hora_inicio > "19:00:00";
 
-## 14. Listar las hermandades que tienen más de 80 costaleros o fueron fundadas después de 1900.
+-- 14. Listar las hermandades que tienen más de 80 costaleros o fueron fundadas después de 1900.
 select nombre from hermandad where numero_costaleros > 80 and antiguedad > 1900;
 
-## 15. Mostrar las procesiones que no se realizan el Domingo de Ramos.
+-- 15. Mostrar las procesiones que no se realizan el Domingo de Ramos.
 
 select nombre from procesion where not dia_semana = "Domingo de Ramos";
-## 16. Mostrar todas las procesiones ordenadas por la hora de inicio en orden ascendente.
+-- 16. Mostrar todas las procesiones ordenadas por la hora de inicio en orden ascendente.
 select nombre, hora_inicio from procesion order by hora_inicio ASC;
 
 
-## 17. Listar las hermandades ordenadas por antigüedad de forma descendente.
+-- 17. Listar las hermandades ordenadas por antigüedad de forma descendente.
 select nombre, antiguedad from hermandad order by antiguedad desc;
 
-## 18. Seleccionar los pasos ordenados por peso y, en caso de empate, por estilo alfabético.
+-- 18. Seleccionar los pasos ordenados por peso y, en caso de empate, por estilo alfabético.
 
 select nombre, peso, estilo from paso order by peso asc, estilo asc;
 
-## 19. Ordenar las procesiones por día de la semana (Lunes primero).
+-- 19. Ordenar las procesiones por día de la semana (Lunes primero).
 select nombre, dia_semana from procesion order by case dia_semana when "Lunes Santo" then 0 else 1 end;
-## 20. Mostrar los puntos de paso de las procesiones ordenados por hora de paso en orden descendente.
+-- 20. Mostrar los puntos de paso de las procesiones ordenados por hora de paso en orden descendente.
 select punto from itinerario order by hora_paso desc;
-## 21. Contar cuántas procesiones hay en total.
+-- 21. Contar cuántas procesiones hay en total.
 select count(nombre) as procesiones from procesion
 
-## 22. Obtener el peso promedio de todos los pasos.
+-- 22. Obtener el peso promedio de todos los pasos.
 select avg(peso) as peso_pasos from  paso
 
-## 23. Calcular el número máximo de costaleros en una hermandad.
+-- 23. Calcular el número máximo de costaleros en una hermandad.
 select max(numero_costaleros) from hermandad
 
 
 si queremos ver la hermandad con mas costaleros: (select nombre from hermandad where numero_costaleros = (select max(numero_costaleros) from hermandad))
-## 24. Obtener el número de procesiones que se realizan en el barrio 'Albaicín'.
+-- 24. Obtener el número de procesiones que se realizan en el barrio 'Albaicín'.
 SELECT COUNT(*) as numero_procesiones FROM procesion WHERE barrio = "Albaicín";
 
 
-## 25. Sumar el peso de todos los pasos.
+-- 25. Sumar el peso de todos los pasos.
 select sum(peso) as peso_pasos from paso;
 
-## 26. Agrupar las procesiones por barrio y contar cuántas procesiones hay en cada uno.
+-- 26. Agrupar las procesiones por barrio y contar cuántas procesiones hay en cada uno.
 select barrio, count(*) as total_procesiones from procesion group by barrio
 
-## 27. Calcular el peso total de los pasos agrupados por estilo.
+-- 27. Calcular el peso total de los pasos agrupados por estilo.
 select estilo, sum(peso) from paso as peso_total group by estilo
 
-## 28. Mostrar las hermandades agrupadas por número de costaleros, filtrando aquellas con más de 100 costaleros.
+-- 28. Mostrar las hermandades agrupadas por número de costaleros, filtrando aquellas con más de 100 costaleros.
 select nombre, numero_costaleros from hermandad where numero_costaleros > 100 order by nombre;
 
 
-## 29. Obtener el número de procesiones que tienen puntos de paso después de las 20:00.
+-- 29. Obtener el número de procesiones que tienen puntos de paso después de las 20:00.
 select count(nombre) from procesion where id in (select (id_procesion) as numero_procesiones from itinerario where punto > "20:00:00" order by punto)
 
-## 30. Agrupar las hermandades por antigüedad y contar cuántas hay en cada rango.
+-- 30. Agrupar las hermandades por antigüedad y contar cuántas hay en cada rango.
 select nombre from hermandad where antiguedad between 1500 and 1800  (o el rango que tu quieras)
 
-## 31. Concatenar el nombre y barrio de cada procesión en un único campo, separados por un guion.
+-- 31. Concatenar el nombre y barrio de cada procesión en un único campo, separados por un guion.
 select concat(nombre, " - ", barrio) as hermandad_barrio from procesion
 
-## 32. Mostrar las procesiones cuyos nombres contienen más de 10 caracteres.
+-- 32. Mostrar las procesiones cuyos nombres contienen más de 10 caracteres.
 select nombre from procesion where char_length(nombre) > 10
 
-## 33. Seleccionar los nombres de las procesiones que contienen la palabra 'Soledad'.
+-- 33. Seleccionar los nombres de las procesiones que contienen la palabra 'Soledad'.
 select nombre from procesion where nombre like "%Soledad%"
 
-## 34. Mostrar las hermandades ordenadas por el número de costaleros en orden ascendente.
+-- 34. Mostrar las hermandades ordenadas por el número de costaleros en orden ascendente.
 select nombre, numero_costaleros from hermandad order by numero_costaleros asc
 
-## 35. Listar los nombres de los pasos en los que la palabra 'Virgen' no aparece.
+-- 35. Listar los nombres de los pasos en los que la palabra 'Virgen' no aparece.
 select nombre from paso where nombre like "%Virgen%"
 
-## 36. Calcular la diferencia entre el peso máximo y mínimo de los pasos.
+-- 36. Calcular la diferencia entre el peso máximo y mínimo de los pasos.
 select max(peso) - min(peso) from paso
 
-## 37. Mostrar solo las procesiones cuyo nombre no empieza con 'La'.
+-- 37. Mostrar solo las procesiones cuyo nombre no empieza con 'La'.
 select nombre from procesion where nombre not like "%La%"
 
-## 38. Formatear la hora de inicio de las procesiones en formato de 12 horas con AM/PM.
+-- 38. Formatear la hora de inicio de las procesiones en formato de 12 horas con AM/PM.
 select nombre, date_format(hora_inicio, '%r') as hora_12 from procesion
 
 
-## 39. Mostrar solo la hora (sin minutos ni segundos) del paso por cada punto del itinerario.
+-- 39. Mostrar solo la hora (sin minutos ni segundos) del paso por cada punto del itinerario.
 
 select nombre, date_format(hora_inicio, '%H') as hora_12 from procesion
 
 
-## 40. Seleccionar las procesiones que tienen su inicio en las próximas 6 horas a partir de la fecha y hora actual.
+-- 40. Seleccionar las procesiones que tienen su inicio en las próximas 6 horas a partir de la fecha y hora actual.
 select nombre, hora_inicio from procesion where hour(hora_inicio) >= hour(now()) and hour(hora_inicio) <= hour(now()) + 5.99
 
 
 
-## EXTRAS
-## 41. Redondear el peso de los pasos a la centena más cercana.
+-- EXTRAS
+-- 41. Redondear el peso de los pasos a la centena más cercana.
 SELECT nombre, peso, ROUND(peso, -2) AS peso_redondeado FROM paso;
 
-## 42. Mostrar el peso de los pasos dividido entre 1000, con dos decimales.
+-- 42. Mostrar el peso de los pasos dividido entre 1000, con dos decimales.
 SELECT nombre, ROUND(peso / 1000, 2) AS peso_toneladas FROM paso;
 
-## 43. Generar un número aleatorio entre 1 y 100.
+-- 43. Generar un número aleatorio entre 1 y 100.
 SELECT FLOOR(1 + (RAND() * 100));
