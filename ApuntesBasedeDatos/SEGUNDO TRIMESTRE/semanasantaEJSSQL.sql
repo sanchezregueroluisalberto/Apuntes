@@ -73,7 +73,7 @@ INSERT INTO itinerario (id_procesion, punto, hora_paso) VALUES
 select nombre from procesion
 
 -- 2. Mostrar los barrios donde se realizan las procesiones, sin repetir.
-select nombre, barrio from procesion
+select distinct barrio from procesion
 
 -- 3. Obtener el nombre y la hora de inicio de todas las procesiones que comienzan después de las 18:00.
 
@@ -92,8 +92,7 @@ select nombre from procesion where dia_semana = "Viernes Santo"
 
 -- 7. Mostrar los puntos de paso de las procesiones que pasan por 'Catedral'.
 
-select punto from itinerario where id_procesion in (select id_procesion from itinerario where punto = "Catedral");
-
+SELECT punto FROM itinerario WHERE punto = 'Catedral';
 -- 8. Obtener las procesiones que tienen lugar en el barrio 'Centro'.
 select nombre, barrio from procesion where barrio = "Centro";
 -- 9. Listar los estilos de pasos únicos.
