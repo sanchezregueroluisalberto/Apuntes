@@ -34,13 +34,13 @@ body {
 /* 4. ENLACES Y ESTADOS (HOVER/ACTIVE) */
 .nav-link {
   text-decoration: none;
-  color: white; /* Color inicial */
+  color: rgb(255, 255, 255); /* Color inicial */
   font-size: small;
 }
 
 /* Cambia el color al pasar el ratón */
 .nav-link:hover {
-  color: #e67e22;
+  color: #22e639;
 }
 
 /* Resalta el enlace seleccionado */
