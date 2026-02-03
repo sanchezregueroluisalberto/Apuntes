@@ -74,7 +74,7 @@ public class ej2 {
                 } else {
                     for (int i = 0; i < matriculas.size(); i++) {
                         System.out.println(
-                                (i + 1) + " -> " + matriculas.get(i) + " | " + tipos.get(i) + " | Coste: " + costes.get(i)
+                                (i) + " -> " + matriculas.get(i) + " | " + tipos.get(i) + " | Coste: " + costes.get(i)
                                         + "euros");
                     }
                 }
@@ -83,7 +83,7 @@ public class ej2 {
                 System.out.println("Introduce indice: ");
                 indice = scanner.nextInt();
                 scanner.nextLine();
-                
+
             }
 
         }
