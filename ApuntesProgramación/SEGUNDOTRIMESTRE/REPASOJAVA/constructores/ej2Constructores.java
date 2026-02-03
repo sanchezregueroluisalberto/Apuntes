@@ -3,7 +3,9 @@ package ApuntesProgramación.SEGUNDOTRIMESTRE.REPASOJAVA.constructores;
 public class ej2Constructores {
     public static void main(String[] args) {
         cuentaBancaria miCuenta = new cuentaBancaria("Alex", 40.00);
+        System.out.println(miCuenta.saldo);
         miCuenta.depositarCantidad(45.00);
+        System.out.println(miCuenta.saldo);
         miCuenta.retirarCantidad(100.00); // este no funcionaria
 
     }
