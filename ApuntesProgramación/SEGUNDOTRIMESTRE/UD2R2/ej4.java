@@ -97,10 +97,6 @@ public class ej4 {
         ArrayList<Integer> cantidades = new ArrayList<Integer>(Arrays.asList(5, 3, 1, 7));
 
         int opcion = 0;
-        String libroNuevo = "";
-        int cantidadNuevoLibro = 0;
-        String libroActualizado = "";
-        int cantidadLibroActualizado = 0;
         while (opcion != 4) {
             opcion = pedirOpcion(scanner);
             // OPCION 1
