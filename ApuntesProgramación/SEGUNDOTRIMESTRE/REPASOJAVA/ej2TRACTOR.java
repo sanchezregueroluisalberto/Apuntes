@@ -3,7 +3,7 @@ package ApuntesProgramación.SEGUNDOTRIMESTRE.REPASOJAVA;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class ej2 {
+public class ej2TRACTOR {
     // funcion de pedir opciones
     public static int pedirOpcion(Scanner escaner) {
         int opcionJuego = 0;
