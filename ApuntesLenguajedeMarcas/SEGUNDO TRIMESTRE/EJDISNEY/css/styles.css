@@ -54,7 +54,7 @@ body {
   justify-content: center;
   align-items: center;
   height: 25vh;
-  background-image: url("https://picsum.photos/100/300");
+  background-image: url("https://cdn.pixabay.com/photo/2016/11/20/09/12/castle-1842324_1280.jpg");
   background-size: cover;
   background-position: center;
 }
