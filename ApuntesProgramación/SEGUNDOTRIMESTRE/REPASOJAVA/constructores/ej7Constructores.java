@@ -3,22 +3,29 @@ package ApuntesProgramación.SEGUNDOTRIMESTRE.REPASOJAVA.constructores;
 public class ej7Constructores {
     public static void main(String[] args) {
         Lampara miLampara = new Lampara(false);
-        System.out.println(miLampara);
+        System.out.println(miLampara); // apagada
+        miLampara.encender();
+        System.out.println(miLampara); // encendida
+
+        
     }
 }
-class Lampara{
+
+class Lampara {
     boolean encendido;
 
-    Lampara(boolean estado){
+    Lampara(boolean encendido) {
         this.encendido = encendido;
     }
-    public boolean encender(boolean encendido){
-        encendido = true;
-        return encender(encendido);
+    public String toString(){
+        return "La lampara está " + (encendido ? "encendida" : "apagada");
     }
-    public boolean apagar (boolean encendido){
-        encendido = false;
-        return apagar(encendido);
+    public void encender() {
+        this.encendido = true;
+    }
+
+    public void apagar() {
+        this.encendido = false;
     }
 }
 // faltan cosas
