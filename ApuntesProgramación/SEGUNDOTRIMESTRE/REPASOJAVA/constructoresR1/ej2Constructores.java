@@ -1,4 +1,4 @@
-package ApuntesProgramación.SEGUNDOTRIMESTRE.REPASOJAVA.constructores;
+package ApuntesProgramación.SEGUNDOTRIMESTRE.REPASOJAVA.constructoresR1;
 
 public class ej2Constructores {
     public static void main(String[] args) {
