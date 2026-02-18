@@ -1,0 +1,1 @@
+const imagenCambio = document.getElementById("imagen").src = "imagen2.jpg"
