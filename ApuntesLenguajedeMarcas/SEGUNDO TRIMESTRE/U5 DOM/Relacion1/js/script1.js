@@ -1,13 +1,14 @@
-const animales = document.getElementsByClassName("animal");
-const boton = document.getElementById("resaltarAnimales");
+const resaltarAnimales = document.getElementById("resaltarAnimales");
 
-for (const animal of animales) {
-    animal = "lightyellow";
+const ANIMALES = document.querySelectorAll(".animal");
+
+for (const animal of ANIMALES) {
+  animal.style.backgroundColor = "lightyellow";
 }
 
-boton.onclick = function() {
-    for (const animal of animales) {
-        animal.style.color = "green";
-        animal.style.fontSize = "30px";
-    }
-};
+resaltarAnimales.addEventListener("click", function () {
+  for (const animal of ANIMALES) {
+    animal.style.color = "green";
+    animal.style.fontSize = "4rem";
+  }
+});

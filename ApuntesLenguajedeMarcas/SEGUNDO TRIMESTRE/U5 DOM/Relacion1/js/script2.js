@@ -1,12 +1,18 @@
-const frutas = document.getElementsByTagName("li")
-const boton = document.getElementById("marcarFrutas");
+const FRUTAS = document.getElementsByTagName("li");
 
-for (let fruta of frutas) {
-    lista.style.border = "2px solid orange"
+for (const fruta of FRUTAS) {
+  fruta.style.border = "2px solid orange";
+  fruta.style.padding = "8px";
+  fruta.style.margin = "5px 0";
 }
-boton.onclick = function() {
-    for (let fruta of frutas) {
-        lista.style.backgroundColor = "palegreen";
-        fruta.innerHTML += "✅ "
+
+const marcarFrutas = document.getElementById("marcarFrutas");
+
+marcarFrutas.addEventListener("click", function () {
+  for (const fruta of FRUTAS) {
+    fruta.style.backgroundColor = "yellow";
+    if (!fruta.textContent.includes("✅")) {
+      fruta.textContent += " ✅";
     }
-};
+  }
+});

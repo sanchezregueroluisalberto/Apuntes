@@ -1,20 +1,20 @@
 package ApuntesProgramación.SEGUNDOTRIMESTRE.REPASOJAVA.constructoresR2.ej2;
 
-public class Libro {
+class Libro {
     private int id;
     private String titulo;
     private String autor;
     private String sinopsis;
     private boolean disponible;
 
-    Libro(int id, String titulo, String autor, String sinopsis, boolean disponible) {
+    public Libro(int id, String titulo, String autor, String sinopsis, boolean disponible) {
         this.id = id;
         this.titulo = titulo;
         this.autor = autor;
         this.sinopsis = sinopsis;
         this.disponible = disponible;
     }
-
+    @Override
     public String toString() {
         String estado = disponible ? "Disponible" : "No Disponible";
         return "Informacion del libro: ID: " + id + " | titulo: " + titulo + " | autor: " + autor + " | sinopsis: "
@@ -53,12 +53,12 @@ public class Libro {
         this.sinopsis = sinopsis;
     }
 
-    public void setDisponible(boolean disponible) {
-        this.disponible = disponible;
-    }
-
     public boolean isDisponible() {
         return disponible;
+    }
+
+    public void setDisponible(boolean disponible) {
+        this.disponible = disponible;
     }
 
 }
