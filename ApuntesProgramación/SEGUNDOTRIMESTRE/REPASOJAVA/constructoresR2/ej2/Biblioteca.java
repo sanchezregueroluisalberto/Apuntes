@@ -17,13 +17,23 @@ public class Biblioteca {
     public void prestarLibro(String titulo) {
         for (Libro libro : librosBiblioteca) {
             if (libro.getTitulo().equals(titulo)) {
-                libro.setDisponible(false);
-                System.out.println("El libro '" + titulo + "' ha sido prestado");
+                if (libro.isDisponible()) {
+                    libro.setDisponible(false);
+                    System.out.println("El libro '" + titulo + "' ha sido prestado");
 
-            } else {
-                System.out.println("Lo siento, el libro '" + titulo + "' no está disponible para prestar");
+                } else {
+                    System.out.println("Lo siento, el libro '" + titulo + "' no está disponible para prestar");
+                }
             }
+        }
+    }
 
+    public void devolverLibro(String titulo) {
+        for (Libro libro : librosBiblioteca) {
+            if (libro.getTitulo().equals(titulo)) {
+                libro.setDisponible(true);
+                System.out.println("Has devuelto: " + titulo);
+            }
         }
     }
 
