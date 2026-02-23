@@ -3,7 +3,7 @@ package ApuntesProgramación.SEGUNDOTRIMESTRE.REPASOJAVA.constructoresR2.ej4;
 import java.util.ArrayList;
 
 public class Playlist {
-    ArrayList<Canciones> cancionesPlaylist;
+    private ArrayList<Canciones> cancionesPlaylist;
 
     Playlist() {
         this.cancionesPlaylist = new ArrayList<>();
@@ -13,11 +13,18 @@ public class Playlist {
         cancionesPlaylist.add(cancion);
     }
 
-    public String mostrarTodasCanciones(Canciones cancion){
+    public String mostrarTodasCanciones() {
         String lista = "";
-        for(Canciones cancionCualquiera : cancionesPlaylist){
-            lista += 
+        for (Canciones cancion : cancionesPlaylist) {
+            lista += cancion.toString() + "\n";
         }
-        return
+        return lista;
+    }
+    public int sumatorioTotalPlaylist(){
+        int total = 0;
+        for(Canciones cancion : cancionesPlaylist){
+            total += cancion.getDuracion();
+        }
+        return total;
     }
 }
