@@ -1,4 +1,10 @@
 {
     "liveServer.settings.port": 5503,
-    "java.debug.settings.onBuildFailureProceed": true
+    "java.debug.settings.onBuildFailureProceed": true,
+    "java.project.referencedLibraries": [
+        "c:\\Users\\luiss\\Downloads\\javafaker-1.0.2-javadoc.jar"
+    ],
+    "java.project.sourcePaths": [
+        "."
+    ]
 }
