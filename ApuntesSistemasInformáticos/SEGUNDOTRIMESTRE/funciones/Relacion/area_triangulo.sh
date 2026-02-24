@@ -4,13 +4,17 @@
 validar_argumentos() {
     if [ $# -ne $(( $1 + 1 )) ]; then
         echo "Hay que pasar $1 argumentos"
-        echo false
+        return 1
     else
-        echo true
+        return 0
     fi
 }
 
 
 area_triangulo(){
-    validar_argumentos 2 $@
+    validar_argumentos 2 "$@" || return 1
+    resultado=$(( $1 * $2 / 2 ))
+    echo $resultado
+    
 }
+area_triangulo 5 6
