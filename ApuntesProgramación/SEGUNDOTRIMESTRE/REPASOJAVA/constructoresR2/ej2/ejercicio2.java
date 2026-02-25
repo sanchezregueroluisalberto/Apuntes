@@ -2,7 +2,7 @@ package ApuntesProgramación.SEGUNDOTRIMESTRE.REPASOJAVA.constructoresR2.ej2;
 
 import java.util.Scanner;
 
-public class Ejercicio2 {
+public class ejercicio2 {
     public static void main(String[] args) {
         Biblioteca miBiblioteca = new Biblioteca();
         // Faker faker = new Faker(); // Si tus métodos son static, esta línea no es
