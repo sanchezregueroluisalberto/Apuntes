@@ -22,8 +22,12 @@ public class Amarre {
         setTipoAmarre(tipoAmarre);
     }
 
+    public Amarre(double longitudMaxima) {
+        this(longitudMaxima, "NORMAL");
+    }
+
     private void asignarAmarre() {
-        setNumero(numero);
+        setNumero(numeroAmarres);
         numeroAmarres++;
     }
 
@@ -56,13 +60,14 @@ public class Amarre {
     }
 
     private void calcularPrecioDia() {
-        if (tipoAmarre.equals(TIPOSVALIDOS.get(0))) {
-            precioDia = 25 + (1.5 * longitudMaxima);
-        } else if (tipoAmarre.equals(TIPOSVALIDOS.get(1))) {
-            precioDia = 60 + (2.2 * longitudMaxima);
-        } else if (tipoAmarre.equals(TIPOSVALIDOS.get(2))) {
-            precioDia = 120 + (3.5 * longitudMaxima);
-        }
+        if (tipoAmarre != null && longitudMaxima != -1)
+            if (tipoAmarre.equals(TIPOSVALIDOS.get(0))) {
+                precioDia = 25 + (1.5 * longitudMaxima);
+            } else if (tipoAmarre.equals(TIPOSVALIDOS.get(1))) {
+                precioDia = 60 + (2.2 * longitudMaxima);
+            } else if (tipoAmarre.equals(TIPOSVALIDOS.get(2))) {
+                precioDia = 120 + (3.5 * longitudMaxima);
+            }
     }
 
     public boolean isOcupado() {

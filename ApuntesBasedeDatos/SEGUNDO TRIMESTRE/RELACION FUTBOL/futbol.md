@@ -70,10 +70,10 @@ select e.nombre as nombre_equipo, e.id_equipo, j.nombre, j.apellidos from equipo
 
 ## 2. RIGHT JOIN - Todos los jugadores con datos de su equipo
 
-
+select concat(j.nombre, " ", j.apellidos) as nombre_jugador, j.id_jugador, e.nombre as nombre_equipo from equipos as e right join jugadores as j on j.id_equipo = e.id_equipo
 
 ## 4. Salario promedio por equipo
-
+select e.nombre as nombre_equipo, avg(j.salario_anual) as salario_promedio from equipos as e inner join jugadores as j on j.id_equipo = e.id_equipo group by e.id_equipo, e.nombre
 
 ## 5. Equipos sin jugadores registrados
 
