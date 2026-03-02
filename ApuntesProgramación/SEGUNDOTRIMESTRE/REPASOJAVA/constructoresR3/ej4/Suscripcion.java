@@ -20,6 +20,62 @@ class Suscripcion {
         this.fechaInicio = fechaInicio;
     }
 
+    public static int getNumeroSuscripciones() {
+        return numeroSuscripciones;
+    }
+
+    public static void setNumeroSuscripciones(int numeroSuscripciones) {
+        Suscripcion.numeroSuscripciones = numeroSuscripciones;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public String getUsuario() {
+        return usuario;
+    }
+
+    public void setUsuario(String usuario) {
+        this.usuario = usuario;
+    }
+
+    public Streamer getStreamer() {
+        return streamer;
+    }
+
+    public void setStreamer(Streamer streamer) {
+        this.streamer = streamer;
+    }
+
+    public int getMeses() {
+        return meses;
+    }
+
+    public void setMeses(int meses) {
+        this.meses = meses;
+    }
+
+    public int getTier() {
+        return tier;
+    }
+
+    public void setTier(int tier) {
+        this.tier = tier;
+    }
+
+    public String getFechaInicio() {
+        return fechaInicio;
+    }
+
+    public void setFechaInicio(String fechaInicio) {
+        this.fechaInicio = fechaInicio;
+    }
+
     public double precioMensual() {
         double coste = 0.00;
         if (this.tier == 1) {
@@ -34,7 +90,7 @@ class Suscripcion {
 
     public double ingresoTotal() {
         double precioTotalPago;
-        precioTotalPago = precioMensual() * this.meses;
+        precioTotalPago = precioMensual() * meses;
         return precioTotalPago;
     }
 
