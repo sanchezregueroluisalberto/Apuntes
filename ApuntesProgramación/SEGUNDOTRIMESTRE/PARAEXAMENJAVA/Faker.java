@@ -1,45 +1,86 @@
 package ApuntesProgramación.SEGUNDOTRIMESTRE.PARAEXAMENJAVA;
 
-import java.util.Random;
-
 public class Faker {
-    private Random random = new Random();
-    
-    private String[] especies = {
-        "León", "Tigre de Bengala", "Elefante Africano", "Jirafa Reticulada", "Cebra de Grant", 
-        "Panda Gigante", "Gorila de Montaña", "Rinoceronte Blanco", "Hipopótamo", "Leopardo", 
-        "Lobo Gris", "Oso Polar", "Oso Pardo", "Pingüino Emperador", "Flamenco", 
-        "Águila Real", "Halcón Peregrino", "Búho Real", "Canguro Rojo", "Koala", 
-        "Orangután", "Chimpancé", "Suricata", "Hiena Manchada", "Guepardo", 
-        "Caimán", "Cocodrilo del Nilo", "Anaconda", "Pitón", "Cobra Real", 
-        "Tortuga Gigante", "Iguana Verde", "Camaleón", "Lémur de Cola Anillada", "Tapir", 
-        "Carpincho", "Armadillo", "Oso Hormiguero", "Puercoespín", "Lince Ibérico",
-        "Lobo Ártico", "Zorro Rojo", "Nutria", "Foca Monje", "Morsa", 
-        "Delfín Mular", "Orca", "Ballena Jorobada", "Tiburón Blanco", "Raya Manta"
+
+    // ===== Datos base (solo para la tarea) =====
+    private static final String[] nombresAnimales = {
+            "León", "Tigre", "Elefante", "Jirafa", "Cebra", "Hipopótamo", "Rinoceronte", "Panda",
+            "Koala", "Canguro", "Lobo", "Oso", "Gorila", "Chimpancé", "Suricata", "Pingüino",
+            "Avestruz", "Cocodrilo", "Serpiente", "Tortuga", "Flamenco", "Lémur", "Nutria", "Foca",
+            "Camello", "Búfalo", "Antílope", "Jaguar", "Pantera", "Puma"
     };
 
-    // Genera un nombre aleatorio de la lista
-    public String animalNombre() {
-        return especies[random.nextInt(especies.length)];
+    private static final String[] adjetivos = {
+            "Africano", "Asiático", "Ártico", "Gigante", "Enano", "Albino", "Salvaje", "Joven",
+            "Adulto", "Nocturno", "Tropical", "Montañés"
+    };
+
+    // =========================================================
+    // Utilidades básicas
+    // =========================================================
+
+    /**
+     * Genera un número entero aleatorio entre min y max (inclusive).
+     */
+    public static int entero(int min, int max) {
+        return (int) (Math.random() * (max - min + 1) + min);
     }
 
-    // Genera un número entero aleatorio entre min y max
-    public int numero(int min, int max) {
-        return random.nextInt((max - min) + 1) + min;
+    /**
+     * Genera un double aleatorio con 2 decimales entre min y max.
+     */
+    public static double precio(double min, double max) {
+        int minCents = (int) (min * 100);
+        int maxCents = (int) (max * 100);
+        return entero(minCents, maxCents) / 100.0;
     }
 
-    // Genera un precio con decimales
-    public double precio(double min, double max) {
-        return min + (max - min) * random.nextDouble();
+    /**
+     * Devuelve un elemento aleatorio de un array de Strings.
+     */
+    private static String deLista(String[] lista) {
+        return lista[entero(0, lista.length - 1)];
     }
-    
-    // Genera un código aleatorio tipo A1B2C3
-    public String generarCodigo() {
-        String caracteres = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
-        String cod = "";
-        for(int i = 0; i < 6; i++) {
-            cod += caracteres.charAt(random.nextInt(caracteres.length()));
+
+    // =========================================================
+    // Generadores específicos para la tarea
+    // =========================================================
+
+    /**
+     * Genera un nombre de animal simple.
+     * Ej: "Tigre Asiático"
+     */
+    public static String nombreAnimal() {
+        return deLista(nombresAnimales) + " " + deLista(adjetivos);
+    }
+
+    /**
+     * Genera un código alfanumérico de 6 caracteres (A-Z, 0-9).
+     * Ej: "A1B2C3"
+     */
+    public static String codigoAnimal() {
+        String chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+        String codigo = "";
+        for (int i = 0; i < 6; i++) {
+            int pos = entero(0, chars.length() - 1);
+            codigo += chars.charAt(pos);
         }
-        return cod;
+        return codigo;
+    }
+
+    /**
+     * Genera una cantidad aleatoria para el animal.
+     * Rango recomendado: 0 a 50 (puedes ajustarlo en Main si quieres).
+     */
+    public static int cantidadAnimal() {
+        return entero(0, 50);
+    }
+
+    /**
+     * Genera un precio aleatorio para el animal (2 decimales).
+     * Rango recomendado: 5.00 a 200.00
+     */
+    public static double precioAnimal() {
+        return precio(5.00, 200.00);
     }
 }

@@ -16,7 +16,7 @@ public class Animal {
     @Override
     public String toString() {
         return "Código: " + codigo + " | Nombre: " + nombre + " | Cantidad: " + cantidad + " | Precio: " + precio
-                + " €";
+                + " Euros";
     }
 
     public String getNombre() {

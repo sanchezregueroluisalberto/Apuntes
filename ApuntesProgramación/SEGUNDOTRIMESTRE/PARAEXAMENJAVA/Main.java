@@ -32,10 +32,10 @@ public class Main {
         int cantidadEjemplares;
 
         for (int i = 0; i < 1000; i++) {
-            String nombre = faker.animalNombre();
-            String codigo = faker.generarCodigo() + "-" + i;
-            int cantidad = faker.numero(0, 20);
-            double precio = faker.precio(15.0, 500.0);
+            String nombre = Faker.nombreAnimal();
+            String codigo = Faker.codigoAnimal() + "-" + i;
+            int cantidad = Faker.entero(0, 20);
+            double precio = Faker.precio(i, cantidad);
 
             miZoo.agregarAnimal(new Animal(nombre, codigo, cantidad, precio));
         }
