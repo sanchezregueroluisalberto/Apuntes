@@ -1,0 +1,211 @@
+/* 1) Estilos globales */
+.page,
+.page * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.page {
+  background: #0b1220;
+  color: #e7ecf5;
+  font-family: Arial, sans-serif;
+  line-height: 1.5;
+}
+
+/* 2) Encabezado */
+.site-header {
+  background: #0f1a33;
+  padding: 16px;
+  border-bottom: 2px solid #ff3b3b; /* detalle decorativo */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.site-nav .nav-list {
+  list-style: none; /* quitar estilos por defecto */
+  display: flex;
+  gap: 10px;
+}
+
+.site-nav .nav-item a {
+  display: inline-block;
+  padding: 8px 10px;
+  color: #e7ecf5;
+  text-decoration: none;
+}
+
+.site-nav .nav-item a:hover {
+  background: rgba(255, 59, 59, 0.2);
+}
+
+.site-nav .nav-item--active a {
+  background: rgba(255, 59, 59, 0.35);
+}
+
+/* 3) Hero */
+.hero {
+  min-height: 320px; /* altura destacada */
+  padding: 24px 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 10px;
+  background:
+    linear-gradient(rgba(11, 18, 32, 0.75), rgba(11, 18, 32, 0.75)),
+    url("https://placehold.co/1200x500"); /* recurso de fondo */
+  background-size: cover;
+  background-position: center;
+}
+
+.hero button {
+  width: fit-content;
+  padding: 10px 14px;
+  border: 0;
+  cursor: pointer;
+  background: #ff3b3b;
+  color: #0b1220;
+  font-weight: bold;
+}
+
+.hero button:hover {
+  background: #ff5c5c;
+  transform: scale(1.03);
+}
+
+/* 4) Casos reales (tarjetas) */
+.cases {
+  padding: 24px 16px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+/* para que el h2 no “compita” con las tarjetas */
+.cases h2 {
+  width: 100%;
+}
+
+.case-card {
+  flex: 1 1 220px;
+  padding: 14px;
+  background: #0f1a33;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+/* descendientes (imagen) */
+.case-card img {
+  border-radius: 10px;
+}
+
+/* hijo directo (título) */
+.case-card > h3 {
+  margin-top: 10px;
+}
+
+.case-card button {
+  margin-top: 10px;
+  padding: 8px 12px;
+  border: 0;
+  cursor: pointer;
+  background: rgba(255, 59, 59, 0.2);
+  color: #e7ecf5;
+}
+
+.case-card button:hover {
+  background: rgba(255, 59, 59, 0.35);
+}
+
+/* 5) Amenazas */
+.threats {
+  padding: 24px 16px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.threats h2 {
+  width: 100%;
+}
+
+.threat-card {
+  flex: 1 1 200px;
+  padding: 14px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+/* estilos distintos por tarjeta (por clases) */
+.threat-card--malware { background: rgba(255, 59, 59, 0.10); }
+.threat-card--datos { background: rgba(59, 130, 246, 0.10); }
+.threat-card--legal { background: rgba(245, 158, 11, 0.10); }
+.threat-card--suplantacion { background: rgba(168, 85, 247, 0.10); }
+
+/* selector de hermanos adyacentes (+) */
+.threat-card img:hover + h3 {
+  color: #ff3b3b;
+}
+
+/* 6) Eventos */
+.events {
+  padding: 24px 16px;
+}
+
+.event-list {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+/* selector combinado ul > li junto con clases */
+.event-list > .event-item {
+  flex: 1 1 240px;
+  padding: 14px;
+  background: #0f1a33;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+/* tercer evento distinto */
+.event-item--special {
+  background: rgba(255, 59, 59, 0.12);
+  border-color: rgba(255, 59, 59, 0.35);
+}
+
+/* fecha destacada */
+.event-item time {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 6px 10px;
+  background: rgba(255, 59, 59, 0.2);
+  border: 1px solid rgba(255, 59, 59, 0.4);
+}
+
+/* 7) Footer */
+.site-footer {
+  padding: 16px;
+  background: #070b14;
+  color: #e7ecf5;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.social-list {
+  list-style: none;
+  display: flex;
+  gap: 10px;
+}
+
+.social-item a {
+  color: #e7ecf5;
+  text-decoration: none;
+  padding: 8px 10px;
+}
+
+.social-item a:hover {
+  background: rgba(255, 59, 59, 0.2);
+}
